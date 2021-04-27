@@ -29,4 +29,6 @@ public interface ImoocMallUserMapper {
     int updateByPrimaryKeySelective(ImoocMallUser record);
 
     int updateByPrimaryKey(ImoocMallUser record);
+
+    ImoocMallUser selectByName(String username);
 }
