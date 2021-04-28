@@ -245,6 +245,6 @@
     select 
     <include refid="Base_Column_List"></include>
     from imooc_mall_user
-    where username = #{username, jdbcTpye=VARCHAR}
+    where username = #{username, jdbcType=VARCHAR}
   </select>
 </mapper>
