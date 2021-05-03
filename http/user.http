@@ -1,0 +1,27 @@
+###注册
+POST http://localhost:8880/register
+Content-Type: application/x-www-form-urlencoded
+
+id=2&username=hs&password=12345678
+
+###登录
+POST http://localhost:8880/login
+Content-Type: application/x-www-form-urlencoded
+
+username=hs&password=12345678
+
+###更新签名
+POST http://localhost:8880/user/update
+Content-Type: application/x-www-form-urlencoded
+
+signature="下雨天"
+
+###登出
+POST localhost:8880/user/logout
+Content-Type: application/x-www-form-urlencoded
+
+###管理员登录
+POST localhost:8880/adminLogin
+Content-Type: application/x-www-form-urlencoded
+
+username=fx&password=123456

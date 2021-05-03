@@ -31,4 +31,6 @@ public interface ImoocMallUserMapper {
     int updateByPrimaryKey(ImoocMallUser record);
 
     ImoocMallUser selectByName(String username);
+
+    ImoocMallUser selectByLogin(@Param("username") String username, @Param("password") String password);
 }

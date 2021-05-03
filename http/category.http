@@ -1,0 +1,6 @@
+###新增商品分类
+POST http://localhost:8880/admin/category/add
+Content-Type: application/json
+
+{"id":3, "name": "鸭货扳手零食", "type":2, "parentId":1, "orderNum":10}
+###

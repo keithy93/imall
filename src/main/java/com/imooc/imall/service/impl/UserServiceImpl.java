@@ -42,4 +42,30 @@ public class UserServiceImpl implements UserService {
         if (count == 0)
             throw new ImoocMallException(ImoocMallExceptionEnum.INSERT_FAILED);
     }
+
+    @Override
+    public ImoocMallUser login(String username, String password) throws ImoocMallException {
+        String md5 = null;
+        try {
+            md5 = MD5Utils.getMD5Str(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        ImoocMallUser user = imoocMallUserMapper.selectByLogin(username, password);
+        if (user == null)
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_PASSWORD);
+        return user;
+    }
+
+    @Override
+    public void updateInfomation(ImoocMallUser user) throws ImoocMallException {
+        int updateCnt = imoocMallUserMapper.updateByPrimaryKeySelective(user);
+        if (updateCnt > 1)
+            throw new ImoocMallException(ImoocMallExceptionEnum.UPDATE_FAILED);
+    }
+
+    @Override
+    public boolean checkAdminRole(ImoocMallUser user) {
+        return user.getRole().equals(2);
+    }
 }

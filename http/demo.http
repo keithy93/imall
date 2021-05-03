@@ -1,9 +1,0 @@
-POST http://localhost:8880/register
-Content-Type: application/x-www-form-urlencoded
-
-id=2&username=hs&password=12345678
-
-###
-GET localhost:8880/test
-
-###

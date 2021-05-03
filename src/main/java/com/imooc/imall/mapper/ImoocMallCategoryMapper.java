@@ -21,4 +21,6 @@ public interface ImoocMallCategoryMapper {
     int updateByExampleSelective(@Param("record") ImoocMallCategory record, @Param("example") ImoocMallCategoryExample example);
 
     int updateByExample(@Param("record") ImoocMallCategory record, @Param("example") ImoocMallCategoryExample example);
+
+    ImoocMallCategory selectByName(String name);
 }

@@ -196,4 +196,10 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/>
+    from imooc_mall_category
+    where `name` = #{name, jdbcType=VARCHAR}
+  </select>
 </mapper>
